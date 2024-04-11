@@ -1,0 +1,14 @@
+<hr>
+<h1>Reto 2 Angular</h1>
+<h2>INGRESO DE PRODUCTO A STOCK</h2>
+DESCRIPCION<input type="text" [(ngModel)]="descripcion">
+{{descripcion}} <br>
+CODIGO<input type="number" [(ngModel)]="codigo">
+{{codigo}}
+PRECIO COSTO$<input type="number" [(ngModel)]="precioc">
+{{precioc}}<br>
+PRECIO VENTA$<input type="number" [(ngModel)]="preciov">
+{{preciov}}
+STOCK IDEAL<input type="number" [(ngModel)]="stock">
+{{stock}}<br>
+<button type="submit"(click)="validar()">INGRESAR</button>
