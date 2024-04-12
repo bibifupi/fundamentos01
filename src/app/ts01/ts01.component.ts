@@ -97,4 +97,54 @@ export class Ts01Component {
      console.log(0 === false); */
  
   }
+  tipoAny(): void {
+    let randomValue: any;
+    console.log(randomValue);
+    randomValue = 'Mateo'; // OK
+    randomValue = true;
+    console.log(randomValue.name); // Logs "undefined" to the console
+    randomValue(); // Returns "randomValue is not a function" error
+    randomValue.toUpperCase(); // Returns "randomValue is not a function" error    // OK
+
+  }
+  tipoUnknown(): void {
+    let randomValue: unknown;
+    console.log(randomValue);
+    randomValue = true;
+    randomValue = 'Mateo';
+    // console.log(randomValue.name); // Logs "undefined" to the console
+    // randomValue(); // Returns "randomValue is not a function" error
+    // randomValue.toUpperCase(); // Returns "randomValue is not a function" error
+  }
+
+  asercionTipos(): void { // es un casting
+    let variable: any;
+    variable = "Hola mundo";
+    console.log(variable.toUpperCase())
+    console.log((variable as string).toUpperCase()); //mas recomendada
+    console.log((<string>variable).toUpperCase());
+
+  }
+
+  tiposUnion(): void {
+    let multiType: number | boolean;
+    multiType = 20;         //* Valid
+    multiType = true;       //* Valid
+    // multiType = "twenty";   //* Invalid
+
+  }
+
+  tiposLiterales(): void {
+    type dice = 1 | 2 | 3 | 4 | 5 | 6;
+    let diceRoll: dice;
+    diceRoll = 1;    //* Valid
+    diceRoll = 2;    //* Valid
+    // diceRoll = 7;    //* Invalid
+  }
+
+  matrices(): void {
+    let list1: number[] = [1,2,3];
+    let list2: Array<number> = [1,2,3];
+  }
 }
+
